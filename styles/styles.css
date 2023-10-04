@@ -10,135 +10,78 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
+ :root {
   /* colors */
-  --link-color: #202020;
-  --link-hover-color: #666;
-  --link-selected-color: #3C3C3C;
-  --link-text-color: #eee;
-  --text-color-light: var(--link-text-color);
-  --background-color: rgb(4 25 45 / 55%);
-  --background-color-light: #fff;
+  --link-color: #0033a0;
+  --link-hover-color: #136ff6;
+  --background-color: #fff;
   --overlay-background-color: #eee;
-  --highlight-background-color: #ffc719;
-  --text-color: #000;
-  --background-color-nav: rgb(255 255 255 / 95%);
-  --nav-color: #fff;
-  --background-color-dark: #000;
-  --background-color-transparent: rgb(0 0 0 / 60%);
-  --focus: hsl(60deg 1% 43%);
-  --input-background: #fff;
-  --button-background-color: #000;
-  --button-text-color: #fff;
-  --button-border-radius: 5px;
-  --button-padding: 5px 10px;
-  --icon-visibility: none;
+  --highlight-background-color: #ccc;
+  --text-color: #00205b;
 
   /* fonts */
-  --body-font-family: adobe-clean-light, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --heading-font-family: adobe-clean-regular, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: JbKlarheit,arial,sans-serif;
+  --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 16px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
-  --body-font-size-xxs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 32px;
+  --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 24px;
-  --heading-font-size-l: 22px;
-  --heading-font-size-m: 20px;
-  --heading-font-size-s: 18px;
-  --heading-font-size-xs: 16px;
-
-  /* Headings (Consonant) */
-  --type-heading-xxxl-lh: 1px;
-  --type-heading-xxl-lh: 1px;
-  --type-heading-xl-lh: 35px;
-  --type-heading-l-lh: 30px;
-  --type-heading-m-lh: 25px;
-  --type-heading-s-lh: 20px;
-  --type-heading-xs-lh: 22px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 89px;
-  --hero-height: 60vh;
-  --article-hero-height:30vh;
-  --h3-padding: 0 10px;
-
-  /* Spacing (Consonant) */
-  --spacing-xxxs: 4px;
-  --spacing-xxs: 8px;
-  --spacing-xs: 16px;
-  --spacing-s: 24px;
-  --spacing-m: 32px;
-  --spacing-ml: 40px;
-  --spacing-l: 48px;
-  --spacing-xl: 56px;
-  --spacing-xxl: 80px;
-  --spacing-xxxl: 104px;
+  --nav-height: 64px;
 
 }
 
-@media (min-width: 600px) {
-  :root {
-    --heading-font-size-xxl: 42px;
-    --heading-font-size-xl: 38px;
-    --heading-font-size-l: 32px;
-    --heading-font-size-m: 28px;
-    --heading-font-size-s: 18px;
-    --heading-font-size-xs: 16px;
-    --hero-height:70vh;
-    --article-hero-height:40vh;
-  }
+@font-face {
+  font-family: roboto-fallback;
+  size-adjust: 100.06%;
+  ascent-override: 95%;
+  src: local('Arial');
 }
+
 
 @media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
+    --heading-font-size-xl: 36px;
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
+    --heading-font-size-s: 16px;
     --heading-font-size-xs: 22px;
-    --hero-height:90vh;
-    --article-hero-height:40vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  :root {
-    --h3-padding: 0;
   }
 }
 
 body {
-  font-size: 16px;
+  font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 22px;
+  line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--background-color-light);
+  background-color: var(--background-color);
   display: none;
-  overflow-x: hidden;
+  text-align: center;
 }
 
 body.appear {
-  display: unset;
+  display: block;
 }
 
 header {
   height: var(--nav-height);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3,
+h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
@@ -147,47 +90,21 @@ h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 {
-  font-size: var(--heading-font-size-xxl);
-  text-shadow: 1px 1px 2px #000;
-}
-
-h2 {
-  font-size: var(--heading-font-size-l);
-}
-
-h3 {
-  font-size: var(--heading-font-size-l);
-  padding: var(--h3-padding);
-  color: #000;
-}
-
-h4 {
-  font-size: var(--heading-font-size-m);
-}
-
-.underline h3::after {
-  border-bottom: 2px solid var(--highlight-background-color);
-  content: "";
-  display: block;
-  padding-top: 8px;
-  width: 84px;
-}
+h1 { font-size: var(--heading-font-size-xxl) }
+h2 { font-size: var(--heading-font-size-xl) }
+h3 { font-size: var(--heading-font-size-l) }
+h4 { font-size: var(--heading-font-size-m) }
+h5 { font-size: var(--heading-font-size-s) }
+h6 { font-size: var(--heading-font-size-xs) }
 
 h5 {
-  font-size: var(--heading-font-size-s)
+  background-color: #00205b;
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-h6 {
-  font-size: var(--heading-font-size-xs)
-}
-
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
+p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -199,15 +116,12 @@ hr {
   border-bottom: 1px solid var(--overlay-background-color);
 }
 
-code,
-pre,
-samp {
+code, pre, samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code,
-samp {
+code, samp {
   padding: .125em;
 }
 
@@ -234,8 +148,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link,
-button {
+a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -246,31 +159,26 @@ button {
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: var(--link-text-color);
+  color: var(--background-color);
   background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
+a.button:hover, a.button:focus, button:hover, button:focus  {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled,
-button:disabled:hover {
+button:disabled, button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary,
-button.secondary {
+a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
@@ -287,7 +195,7 @@ main input {
   box-sizing: border-box;
   border: 1px solid var(--text-color);
   color: var(--text-color);
-  background-color: var(--input-background);
+  background-color: var(--background-color);
 }
 
 main input:hover {
@@ -319,7 +227,6 @@ main img {
 
 .icon {
   display: inline-block;
-  fill: var(--nav-color);
   height: 24px;
   width: 24px;
 }
@@ -330,26 +237,17 @@ main img {
 }
 
 main .section {
-  padding: 32px 0;
-  margin: 0;
-  background-color: #fff;
-  top: 0;
+  padding: 64px 16px;
 }
-
-
-/* main:has(.section.overview), main:has(.section.itinerary), main:has(.section.what-to-bring) {
-  display: flex;
-  flex-direction: row;
-} */
 
 @media (min-width: 600px) {
   main .section {
-    padding: 32px 0;
+    padding: 64px 32px;
   }
 }
 
 @media (min-width: 900px) {
-  .section>div {
+  .section > div {
     max-width: 1200px;
     margin: auto;
   }
@@ -358,8 +256,4 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
-}
-
-body.noscroll {
-  overflow: hidden;
 }
