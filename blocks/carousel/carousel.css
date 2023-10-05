@@ -9,7 +9,7 @@ main .carousel {
   scroll-behavior: smooth;
   /* max-width: 1680px; */
   margin: auto;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   text-align: center;
 }
