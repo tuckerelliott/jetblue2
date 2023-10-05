@@ -4,7 +4,7 @@
 }
 
 .columns img {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .columns > div > div {
@@ -17,6 +17,10 @@
 
 .columns > div > .columns-img-col img {
   display: block;
+}
+.columns * a.button:any-link {
+  color: #0033a0;
+  background-color: #FFF;
 }
 
 @media (min-width: 900px) {
